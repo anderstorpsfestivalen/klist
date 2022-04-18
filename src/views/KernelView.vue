@@ -1,16 +1,15 @@
 <template>
   <div class="home">
     <KernelMail
-                v-for="item in events"
-                v-bind:key="item.t"
-                v-bind:from="item.From"
-                v-bind:to="item.To"
-                v-bind:subject="item.Subject"
-                v-bind:date="item.Date"
-                v-bind:text="item.Text"
-                class="recurring"
-              ></KernelMail>
-
+      v-for="item in events"
+      v-bind:key="item.t"
+      v-bind:from="item.From"
+      v-bind:to="item.To"
+      v-bind:subject="item.Subject"
+      v-bind:date="item.Date"
+      v-bind:text="item.Text"
+      class="recurring"
+    ></KernelMail>
   </div>
 </template>
 
@@ -18,29 +17,25 @@
 import KernelMail from "@/components/KernelMail";
 
 export default {
-  name: 'KernelView',
+  name: "KernelView",
   components: {
     KernelMail,
   },
   data() {
     return {
-      events: []
+      events: [],
     };
   },
   created: function () {
-    this.connection = new WebSocket("wss://mch.anderstorpsfestivalen.se/kernel");
+    this.connection = new WebSocket(
+      "wss://mch.anderstorpsfestivalen.se/kernel"
+    );
 
-//    let v = this.events;
-
-    this.connection.onmessage = event => {
-         let data = JSON.parse(event.data);
-         this.events.push(data);
+    this.connection.onmessage = (event) => {
+      let data = JSON.parse(event.data);
+      this.events.push(data);
     };
 
-    this.connection.onopen = function (event) {
-      console.log(event);
-      console.log("Successfully connected to the echo websocket server...");
-    };
   },
-}
+};
 </script>
