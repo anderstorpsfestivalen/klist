@@ -33,7 +33,7 @@ export default {
 
     this.connection.onmessage = (event) => {
       let data = JSON.parse(event.data);
-      this.events.push(data);
+      this.events.unshift(data);
     };
 
   },
