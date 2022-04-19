@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="row">
-        <p style="white-space: pre-line">{{ text }}</p>
+        <p style="white-space: pre-line" class="font-monospace">>{{ text }}</p>
       </div>
     </div>
   </div>
