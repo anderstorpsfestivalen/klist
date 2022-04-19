@@ -3,15 +3,15 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          From:
-          <p>{{ from }}</p>
+          <h2>{{ subject }}</h2>
         </div>
         <div class="col">
-          <h2>{{ subject }}</h2>
+          <b>From:</b> {{ from }} <br>
+          <b>Date:</b> {{ date }}
         </div>
       </div>
       <div class="row">
-        <p>{{ text }}</p>
+        <p style="white-space: pre-line">{{ text }}</p>
       </div>
     </div>
   </div>
