@@ -2,13 +2,12 @@
   <div class="kernelmail">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h2>{{ subject }}</h2>
+        <div class="col font-monospace" style="white-space: pre-line" >
+          <b>From:</b> {{ from }} <br />
+          <b>Date:</b> {{ date }} <br />
+          <b>Subject:</b> {{ subject }}
         </div>
-        <div class="col">
-          <b>From:</b> {{ from }} <br>
-          <b>Date:</b> {{ date }}
-        </div>
+        <div class="col"></div>
       </div>
       <div class="row">
         <p style="white-space: pre-line" class="font-monospace">>{{ text }}</p>
