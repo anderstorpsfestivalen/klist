@@ -28,7 +28,7 @@ export default {
   },
   created: function () {
     this.connection = new WebSocket(
-      "wss://mch.anderstorpsfestivalen.se/kernel"
+      "wss://mch.anderstorpsfestivalen.se/kernel/pipe"
     );
 
     this.connection.onmessage = (event) => {
